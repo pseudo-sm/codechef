@@ -65,7 +65,7 @@ def start_exam3(request):
 def submit1(request):
 
     name = request.session["name"]
-    dish = request.session["dish"]
+    dish = request.session["starter"]
     code = request.GET.get("code")
     submission = Submissions.objects.create(name=name,starter=code,dish_starter=dish)
     request.session["submission"] = submission.pk
